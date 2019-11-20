@@ -146,9 +146,9 @@ object KafkaStream {
     // properties.setProperty("zookeeper.connect", "ip1:2181,ip2:2181")
     properties.setProperty("bootstrap.servers", "ip1:9092,ip2:9092")
     properties.setProperty("group.id", "test123")
-    // val stream = env
-    //     .addSource(new FlinkKafkaConsumer08[String]("yixiao_data_org", new SimpleStringSchema(), properties))
-    //     .print()
+
+    // val stream = env.addSource(new FlinkKafkaConsumer08[String]("topic_name", new SimpleStringSchema(), properties))
+
 
     var stream = env.addSource(new FlinkKafkaConsumer[String]("topic_name", new SimpleStringSchema(), properties))
 
